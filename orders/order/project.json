@@ -1,0 +1,19 @@
+{
+  "name": "order",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "orders/order/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/orders/order",
+        "main": "orders/order/src/index.ts",
+        "tsConfig": "orders/order/tsconfig.lib.json",
+        "assets": []
+      }
+    }
+  }
+}
