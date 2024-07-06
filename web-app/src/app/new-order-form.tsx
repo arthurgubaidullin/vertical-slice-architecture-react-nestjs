@@ -1,12 +1,18 @@
+import * as SalesClient from '@org/sales-client';
+import { observer } from 'mobx-react-lite';
+import { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-export function NewOrderForm() {
+export const NewOrderForm = observer(() => {
+  const salesClient = useContext(SalesClient.context);
   const params = useParams();
   const id = params.id;
 
   if (!id) {
     throw new TypeError();
   }
+
+  const [form$] = useState(() => salesClient.newOrderForm.create(id));
 
   return (
     <form
@@ -28,6 +34,9 @@ export function NewOrderForm() {
             type="text"
             placeholder="Awesomeness"
             className="input input-bordered w-full"
+            onChange={(e) => {
+              form$.change({ goods: e.currentTarget.value });
+            }}
             required
           />
         </label>
@@ -42,6 +51,9 @@ export function NewOrderForm() {
             min={1}
             step={1}
             className="input input-bordered w-full"
+            onChange={(e) => {
+              form$.change({ quantity: parseFloat(e.currentTarget.value) });
+            }}
             required
           />
         </label>
@@ -57,6 +69,9 @@ export function NewOrderForm() {
             min={0.01}
             step={0.01}
             className="input input-bordered w-full"
+            onChange={(e) => {
+              form$.change({ total: parseFloat(e.currentTarget.value) });
+            }}
             required
           />
           <div className="label">
@@ -82,4 +97,4 @@ export function NewOrderForm() {
       </div>
     </form>
   );
-}
+});
