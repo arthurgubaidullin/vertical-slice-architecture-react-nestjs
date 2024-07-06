@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'orders-client',
+  displayName: 'orders-client-react',
   preset: '../../../jest.preset.js',
   testEnvironment: 'node',
   transform: {

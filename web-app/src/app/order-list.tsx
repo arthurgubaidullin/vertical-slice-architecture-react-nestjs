@@ -1,5 +1,5 @@
 import * as RD from '@devexperts/remote-data-ts';
-import * as OrdersClient from '@org/orders-client';
+import * as OrdersClient from '@org/orders-client-react';
 import { pipe } from 'fp-ts/function';
 import { useContext } from 'react';
 import { UUIDPreview } from './uuid-preview';

@@ -1,5 +1,5 @@
 import * as SalesClient from '@org/sales-client';
-import * as OrdersClient from '@org/orders-client';
+import * as OrdersClient from '@org/orders-client-react';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
