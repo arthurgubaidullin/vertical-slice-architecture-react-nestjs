@@ -15,6 +15,10 @@
               {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
+              },
+              {
+                "sourceTag": "*",
+                "bannedExternalImports": ["fp-ts/lib/*"]
               }
             ]
           }
