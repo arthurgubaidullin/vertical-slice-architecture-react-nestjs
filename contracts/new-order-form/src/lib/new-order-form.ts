@@ -35,5 +35,5 @@ export const change =
         quantity: data.quantity ? data.quantity : form.quantity,
         total: data.total ? data.total : form.total,
       },
-      fromPredicate((changed) => Eq.equals(form, changed))
+      fromPredicate((changed) => !Eq.equals(form, changed))
     );
