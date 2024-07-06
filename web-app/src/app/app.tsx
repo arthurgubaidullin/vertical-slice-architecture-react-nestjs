@@ -1,8 +1,8 @@
-import { Route, Routes } from 'react-router-dom';
-import { NewOrderForm } from './new-order-form';
-import { OrderList } from './order-list';
-import { NotificationList } from './notification-list';
 import * as UUID from '@org/uuid-v4';
+import { Link, Route, Routes } from 'react-router-dom';
+import { NewOrderForm } from './new-order-form';
+import { NotificationList } from './notification-list';
+import { OrderList } from './order-list';
 
 export function App() {
   return (
@@ -14,9 +14,9 @@ export function App() {
               <h2 className="menu-title">Sales</h2>
               <ul>
                 <li>
-                  <a href={`/new_order_form/${UUID.randomUUID()}`}>
+                  <Link to={`/new_order_form/${UUID.randomUUID()}`}>
                     New Order Form
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -24,11 +24,11 @@ export function App() {
               <h2 className="menu-title">Orders</h2>
               <ul>
                 <li>
-                  <a
-                    href={`orders?key=${decodeURIComponent(UUID.randomUUID())}`}
+                  <Link
+                    to={`orders?key=${decodeURIComponent(UUID.randomUUID())}`}
                   >
                     List
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -36,13 +36,13 @@ export function App() {
               <h2 className="menu-title">Notifications</h2>
               <ul>
                 <li>
-                  <a
-                    href={`notifications?key=${decodeURIComponent(
+                  <Link
+                    to={`notifications?key=${decodeURIComponent(
                       UUID.randomUUID()
                     )}`}
                   >
                     List
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
