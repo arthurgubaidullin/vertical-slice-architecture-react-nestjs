@@ -1,0 +1,19 @@
+{
+  "name": "order-rejected",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "contracts/order-rejected/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/contracts/order-rejected",
+        "main": "contracts/order-rejected/src/index.ts",
+        "tsConfig": "contracts/order-rejected/tsconfig.lib.json",
+        "assets": []
+      }
+    }
+  }
+}
