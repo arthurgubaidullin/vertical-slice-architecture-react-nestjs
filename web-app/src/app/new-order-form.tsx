@@ -1,4 +1,13 @@
+import { useParams } from 'react-router-dom';
+
 export function NewOrderForm() {
+  const params = useParams();
+  const id = params.id;
+
+  if (!id) {
+    throw new TypeError();
+  }
+
   return (
     <form
       onSubmit={(e) => {
@@ -7,6 +16,8 @@ export function NewOrderForm() {
     >
       <div className="grid grid-cols-1 gap-4">
         <h1 className="text-2xl">New Order Form</h1>
+
+        <input type="hidden" value={id} required />
 
         <label className="form-control w-full">
           <div className="label">
