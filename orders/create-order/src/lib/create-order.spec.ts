@@ -1,7 +1,9 @@
 import { createOrder } from './create-order';
 
 describe('createOrder', () => {
-  it('should work', () => {
-    expect(createOrder()).toEqual('create-order');
+  it('should create', () => {
+    expect(
+      createOrder({ id: 'test', goods: 'test', quantity: 1, total: 1 })
+    ).toBeTruthy();
   });
 });

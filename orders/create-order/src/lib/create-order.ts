@@ -1,3 +1,5 @@
-export function createOrder(): string {
-  return 'create-order';
+import { NewOrderForm } from '@org/new-order-form';
+
+export function createOrder(form: NewOrderForm) {
+  return form;
 }
