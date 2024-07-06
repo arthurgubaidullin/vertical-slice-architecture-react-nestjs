@@ -1,5 +1,5 @@
 export function App() {
-  return <div>test</div>;
+  return <div className="container mx-auto">test</div>;
 }
 
 export default App;
