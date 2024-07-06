@@ -1,21 +1,20 @@
 import { Test } from '@nestjs/testing';
-import { NotificationsService } from './notifications.service';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { NotificationsRepository } from './notifications.repository';
 
-describe('NotificationsService', () => {
-  let service: NotificationsService;
+describe('NotificationsRepository', () => {
+  let repository: NotificationsRepository;
 
   beforeEach(async () => {
     const module = await Test.createTestingModule({
       imports: [EventEmitterModule.forRoot()],
-      providers: [NotificationsService, NotificationsRepository],
+      providers: [NotificationsRepository],
     }).compile();
 
-    service = module.get(NotificationsService);
+    repository = module.get(NotificationsRepository);
   });
 
   it('should be defined', () => {
-    expect(service).toBeTruthy();
+    expect(repository).toBeTruthy();
   });
 });
