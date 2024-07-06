@@ -1,1 +1,1 @@
-export * from './lib/order-created-contract';
+export * from './lib/order-created';
