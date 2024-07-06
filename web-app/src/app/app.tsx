@@ -1,9 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { NewOrderForm } from './new-order-form';
-
-function OrderList() {
-  return <div>order list</div>;
-}
+import { OrderList } from './order-list';
 
 function NotificationList() {
   return <div>notification list</div>;
