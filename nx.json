@@ -39,6 +39,16 @@
     }
   ],
   "generators": {
+    "@nx/js:library": {
+      "minimal": true,
+      "bundler": "tsc",
+      "linter": "eslint",
+      "projectNameAndRootFormat": "as-provided",
+      "strict": true,
+      "simpleName": true,
+      "testEnvironment": "node",
+      "unitTestRunner": "jest"
+    },
     "@nx/react": {
       "application": {
         "babel": true,
@@ -53,6 +63,13 @@
         "style": "tailwind",
         "linter": "eslint"
       }
+    }
+  },
+  "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   }
 }
