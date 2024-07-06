@@ -1,0 +1,20 @@
+{
+  "name": "sales-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "sales/server/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/sales/server",
+        "tsConfig": "sales/server/tsconfig.lib.json",
+        "packageJson": "sales/server/package.json",
+        "main": "sales/server/src/index.ts",
+        "assets": ["sales/server/*.md"]
+      }
+    }
+  }
+}
