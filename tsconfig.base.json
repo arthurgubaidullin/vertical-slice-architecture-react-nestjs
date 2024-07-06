@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@org/new-order-form": ["contracts/new-order-form/src/index.ts"],
+      "@org/order-accepted": ["contracts/order-accepted/src/index.ts"],
       "@org/sales-client": ["sales/client/src/index.ts"]
     }
   },
