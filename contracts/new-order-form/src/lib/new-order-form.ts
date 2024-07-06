@@ -26,8 +26,8 @@ export const Eq: _Eq<NewOrderForm> = struct<NewOrderForm>({
 });
 
 export const change =
-  (form: NewOrderForm) =>
-  (data: Partial<NewOrderForm>): Option<NewOrderForm> =>
+  (data: Partial<NewOrderForm>) =>
+  (form: NewOrderForm): Option<NewOrderForm> =>
     pipe(
       {
         id: data.id ? data.id : form.id,
