@@ -1,10 +1,13 @@
 import * as UUID from '@org/uuid-v4';
+import { useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import { NewOrderForm } from './new-order-form';
 import { NotificationList } from './notification-list';
 import { OrderList } from './order-list';
 
 export function App() {
+  const [newOrderFormId, setNewOrderFormId] = useState(UUID.randomUUID());
+
   return (
     <div className="container mx-auto my-4">
       <div className="grid grid-flow-row grid-cols-4">
@@ -14,7 +17,12 @@ export function App() {
               <h2 className="menu-title">Sales</h2>
               <ul>
                 <li>
-                  <Link to={`/new_order_form/${UUID.randomUUID()}`}>
+                  <Link
+                    to={`/new_order_form/${newOrderFormId}`}
+                    onClick={() => {
+                      setNewOrderFormId(UUID.randomUUID());
+                    }}
+                  >
                     New Order Form
                   </Link>
                 </li>
