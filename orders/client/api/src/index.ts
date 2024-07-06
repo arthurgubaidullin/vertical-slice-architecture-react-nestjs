@@ -1,1 +1,1 @@
-export * from './lib/orders-client-api';
+export * from './lib/client-api';

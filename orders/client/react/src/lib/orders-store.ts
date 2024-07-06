@@ -4,7 +4,7 @@ import { NewOrderForm } from '@org/new-order-form';
 import { pipe } from 'fp-ts/function';
 import * as TE from 'fp-ts/TaskEither';
 import { action, observable, onBecomeObserved } from 'mobx';
-import * as ServerApi from './server-api';
+import * as ServerApi from '@org/orders-client-api';
 
 export const create = () => {
   const api = ServerApi.create();
