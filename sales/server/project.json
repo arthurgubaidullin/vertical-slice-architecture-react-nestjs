@@ -1,5 +1,5 @@
 {
-  "name": "sales-server",
+  "name": "sales-nest-module",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "sales/server/src",
   "projectType": "library",

@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'sales-server',
+  displayName: 'sales-nest-module',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
