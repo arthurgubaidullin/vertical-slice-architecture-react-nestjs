@@ -1,3 +1,3 @@
-export * from './lib/orders-server.controller';
-export * from './lib/orders-server.service';
-export * from './lib/orders-server.module';
+export * from './lib/orders.controller';
+export * from './lib/orders.service';
+export * from './lib/orders.module';
