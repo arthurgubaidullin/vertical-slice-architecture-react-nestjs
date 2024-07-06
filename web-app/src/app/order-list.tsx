@@ -1,68 +1,63 @@
+import * as RD from '@devexperts/remote-data-ts';
+import * as OrdersClient from '@org/orders-client';
+import { pipe } from 'fp-ts/function';
+import { useContext } from 'react';
 import { UUIDPreview } from './uuid-preview';
-import * as UUID from '@org/uuid-v4';
+import { observer } from 'mobx-react-lite';
 
-type Order = Readonly<{
-  id: string;
-  goods: string;
-  quantity: number;
-  total: number;
-}>;
+export const OrderList = observer(() => {
+  const ordersClient = useContext(OrdersClient.Context);
 
-const orders: ReadonlyArray<Order> = [
-  {
-    id: UUID.randomUUID(),
-    goods: 'Awesomeness',
-    quantity: 1,
-    total: 1.05,
-  },
-  {
-    id: UUID.randomUUID(),
-    goods: 'Awesomeness',
-    quantity: 10,
-    total: 100,
-  },
-  {
-    id: UUID.randomUUID(),
-    goods: 'Awesomeness',
-    quantity: 3,
-    total: 146,
-  },
-];
+  const list = pipe(
+    ordersClient.list(),
+    RD.fold3(
+      () => (
+        <div>
+          <span className="loading loading-spinner loading-xs"></span>
+        </div>
+      ),
+      (e) => {
+        throw e;
+      },
+      (orders) => (
+        <div className="overflow-x-auto">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Goods</th>
+                <th>Quantity</th>
+                <th>Total price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
 
-export function OrderList() {
+            <tbody>
+              {orders.map((order, index) => (
+                <tr key={order.id} className={index % 2 ? 'hover' : ''}>
+                  <th>
+                    <UUIDPreview uuid={order.id} />
+                  </th>
+                  <td>{order.goods}</td>
+                  <td>{order.quantity}</td>
+                  <td>{order.total}</td>
+                  <td>
+                    <button className="btn btn-xs">Accept</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+    )
+  );
+
   return (
     <div className="grid grid-cols-1 gap-4">
       <h1 className="text-2xl">Orders</h1>
 
-      <div className="overflow-x-auto">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Goods</th>
-              <th>Quantity</th>
-              <th>Total price</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {orders.map((order, index) => (
-              <tr key={order.id} className={index % 2 ? 'hover' : ''}>
-                <th>
-                  <UUIDPreview uuid={order.id} />
-                </th>
-                <td>{order.goods}</td>
-                <td>{order.quantity}</td>
-                <td>{order.total}</td>
-                <td>
-                  <button className="btn btn-xs">Accept</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {list}
     </div>
   );
-}
+});

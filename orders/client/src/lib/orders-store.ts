@@ -1,6 +1,6 @@
 import * as RD from '@devexperts/remote-data-ts';
 import * as UUID from '@org/uuid-v4';
-import { observable, runInAction } from 'mobx';
+import { action, observable, onBecomeObserved, runInAction } from 'mobx';
 import { Order } from './order';
 
 const orders: ReadonlyArray<Order> = [
@@ -29,11 +29,17 @@ export const create = () => {
     RD.initial
   );
 
-  runInAction(() => orders$.set(RD.pending));
+  onBecomeObserved(orders$, () => {
+    runInAction(() => orders$.set(RD.pending));
 
-  setTimeout(() => {
-    orders$.set(RD.success(orders));
-  }, 3000);
+    setTimeout(
+      action(() => {
+        orders$.set(RD.success(orders));
+        console.log('lol', orders);
+      }),
+      3000
+    );
+  });
 
   return { get: () => orders$.get() };
 };
