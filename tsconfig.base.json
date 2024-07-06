@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@org/extracted-order": ["orders/contracts/extracted-order/src/index.ts"],
       "@org/new-order-form": ["contracts/new-order-form/src/index.ts"],
       "@org/notifications-client": ["notifications/client/src/index.ts"],
       "@org/notifications-nest-module": ["notifications/server/src/index.ts"],
