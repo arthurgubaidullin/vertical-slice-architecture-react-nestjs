@@ -7,7 +7,9 @@ export class OrdersController {
 
   @Post()
   add(@Body() form: unknown) {
-    return this.ordersService.add(form);
+    this.ordersService.add(form);
+
+    return { ok: true };
   }
 
   @Get()
