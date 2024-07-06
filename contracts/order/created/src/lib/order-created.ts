@@ -8,3 +8,10 @@ export const OrderCreated = t.readonly(
     total: t.number,
   })
 );
+
+export const create = (
+  data: Readonly<{ id: string; total: number }>
+): OrderCreated => ({
+  id: data.id,
+  total: data.total,
+});
