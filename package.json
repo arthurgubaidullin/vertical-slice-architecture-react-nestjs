@@ -2,7 +2,12 @@
   "name": "@org/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx run-many -t build",
+    "test": "nx run-many -t test --passWithNoTests",
+    "lint": "nx run-many -t lint --fix",
+    "postbuild": "npm run test && npm run lint"
+  },
   "private": true,
   "devDependencies": {
     "@nx/eslint": "19.4.1",
