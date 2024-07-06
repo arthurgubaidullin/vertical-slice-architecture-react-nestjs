@@ -1,6 +1,6 @@
 import { NewOrderForm } from '@org/new-order-form';
 import { constVoid } from 'fp-ts/function';
-import { Context, createContext, useState } from 'react';
+import { createContext, useState } from 'react';
 import * as NewOrderFormStore from './new-order-form';
 
 export type SalesClient = ReturnType<typeof create>;
@@ -17,6 +17,4 @@ export const create = (orders: { add: (data: NewOrderForm) => void }) => ({
   },
 });
 
-export const context: Context<SalesClient> = createContext(
-  create({ add: constVoid })
-);
+export const Context = createContext(create({ add: constVoid }));

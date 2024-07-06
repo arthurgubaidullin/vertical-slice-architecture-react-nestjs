@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
 export const NewOrderForm = observer(() => {
-  const salesClient = useContext(SalesClient.context);
+  const salesClient = useContext(SalesClient.Context);
   const params = useParams();
   const id = params.id;
 

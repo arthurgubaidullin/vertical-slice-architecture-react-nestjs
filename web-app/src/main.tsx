@@ -9,7 +9,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const SalesClientProvider = SalesClient.context.Provider;
+const SalesClientProvider = SalesClient.Context.Provider;
+const OrdersClientProvider = OrdersClient.Context.Provider;
 
 const ordersClient = OrdersClient.create();
 const salesClient = SalesClient.create(ordersClient);
@@ -17,9 +18,11 @@ const salesClient = SalesClient.create(ordersClient);
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <SalesClientProvider value={salesClient}>
-        <App />
-      </SalesClientProvider>
+      <OrdersClientProvider value={ordersClient}>
+        <SalesClientProvider value={salesClient}>
+          <App />
+        </SalesClientProvider>
+      </OrdersClientProvider>
     </BrowserRouter>
   </StrictMode>
 );
