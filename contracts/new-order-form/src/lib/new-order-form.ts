@@ -30,7 +30,7 @@ export const change =
   (form: NewOrderForm): Option<NewOrderForm> =>
     pipe(
       {
-        id: data.id ? data.id : form.id,
+        id: form.id,
         goods: data.goods ? data.goods : form.goods,
         quantity: data.quantity ? data.quantity : form.quantity,
         total: data.total ? data.total : form.total,
