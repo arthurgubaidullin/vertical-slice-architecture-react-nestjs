@@ -1,0 +1,19 @@
+{
+  "name": "new-order-form",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "contracts/new-order-form/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/contracts/new-order-form",
+        "main": "contracts/new-order-form/src/index.ts",
+        "tsConfig": "contracts/new-order-form/tsconfig.lib.json",
+        "assets": []
+      }
+    }
+  }
+}
