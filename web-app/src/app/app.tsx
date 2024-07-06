@@ -1,10 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { NewOrderForm } from './new-order-form';
 import { OrderList } from './order-list';
-
-function NotificationList() {
-  return <div>notification list</div>;
-}
+import { NotificationList } from './notification-list';
 
 export function App() {
   return (
