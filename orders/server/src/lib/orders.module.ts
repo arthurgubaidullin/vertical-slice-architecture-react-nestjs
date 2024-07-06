@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 import { OrdersController } from './orders.controller';
 import { OrdersService } from './orders.service';
 
 @Module({
+  imports: [EventEmitterModule],
   controllers: [OrdersController],
   providers: [OrdersService],
   exports: [OrdersService],
