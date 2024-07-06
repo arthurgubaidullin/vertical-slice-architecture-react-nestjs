@@ -6,6 +6,7 @@
   "private": true,
   "devDependencies": {
     "@nx/js": "^19.4.1",
+    "@nx/react": "^19.4.1",
     "@nx/workspace": "19.4.1",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
@@ -13,5 +14,8 @@
     "nx": "19.4.1",
     "prettier": "^2.6.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
 }
