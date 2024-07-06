@@ -3,13 +3,18 @@ import { pipe } from 'fp-ts/function';
 import { fromPredicate, Option } from 'fp-ts/Option';
 import * as N from 'fp-ts/number';
 import * as S from 'fp-ts/string';
+import * as t from 'io-ts';
 
-export interface NewOrderForm {
-  readonly id: string;
-  readonly goods: string;
-  readonly quantity: number;
-  readonly total: number;
-}
+export type NewOrderForm = t.TypeOf<typeof NewOrderForm>;
+
+export const NewOrderForm = t.readonly(
+  t.strict({
+    id: t.string,
+    goods: t.string,
+    quantity: t.number,
+    total: t.number,
+  })
+);
 
 export const initial = (id: string): NewOrderForm => ({
   id: id,
