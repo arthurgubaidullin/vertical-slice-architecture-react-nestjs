@@ -7,7 +7,7 @@ export const create = () => {
 
   return {
     add: (newOrderForm: NewOrderForm) => {
-      console.log('New order form received.', newOrderForm);
+      orders$.add(newOrderForm);
     },
     list: () => orders$.get(),
   };

@@ -6,12 +6,14 @@ import { Order } from './order';
 
 export const create = () => {
   const orders$ = observable.box<RD.RemoteData<Error, ReadonlyArray<Order>>>(
-    RD.initial
+    RD.initial,
+    { deep: false }
   );
 
   const add = action((newOrderForm: NewOrderForm) =>
     pipe(
       orders$.get(),
+      RD.alt(() => RD.success<Error, ReadonlyArray<Order>>([])),
       RD.map((orders) => [...orders, newOrderForm]),
       (value) => orders$.set(value)
     )
