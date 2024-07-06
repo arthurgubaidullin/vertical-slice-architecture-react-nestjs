@@ -1,0 +1,19 @@
+{
+  "name": "create-order",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "orders/create-order/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/orders/create-order",
+        "main": "orders/create-order/src/index.ts",
+        "tsConfig": "orders/create-order/tsconfig.lib.json",
+        "assets": []
+      }
+    }
+  }
+}
