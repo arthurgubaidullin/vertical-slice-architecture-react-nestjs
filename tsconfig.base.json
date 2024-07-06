@@ -22,6 +22,7 @@
       "@org/notifications-nest-module": ["notifications/server/src/index.ts"],
       "@org/order": ["orders/order/src/index.ts"],
       "@org/order-accepted": ["contracts/order-accepted/src/index.ts"],
+      "@org/order-created-contract": ["order-created-contract/src/index.ts"],
       "@org/order-rejected": ["contracts/order-rejected/src/index.ts"],
       "@org/orders-client-api": ["orders/client/api/src/index.ts"],
       "@org/orders-client-react": ["orders/client/react/src/index.ts"],
