@@ -9,14 +9,14 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "server:build"
+        "buildTarget": "nest-server:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "server:build:development"
+          "buildTarget": "nest-server:build:development"
         },
         "production": {
-          "buildTarget": "server:build:production"
+          "buildTarget": "nest-server:build:production"
         }
       }
     }
