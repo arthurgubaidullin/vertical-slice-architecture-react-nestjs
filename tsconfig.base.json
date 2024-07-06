@@ -17,6 +17,7 @@
     "paths": {
       "@org/new-order-form": ["contracts/new-order-form/src/index.ts"],
       "@org/notifications-client": ["notifications/client/src/index.ts"],
+      "@org/notifications-nest-module": ["notifications/server/src/index.ts"],
       "@org/order-accepted": ["contracts/order-accepted/src/index.ts"],
       "@org/order-rejected": ["contracts/order-rejected/src/index.ts"],
       "@org/orders-client": ["orders/client/src/index.ts"],

@@ -1,0 +1,20 @@
+{
+  "name": "notifications-nest-module",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "notifications/server/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/notifications/server",
+        "tsConfig": "notifications/server/tsconfig.lib.json",
+        "packageJson": "notifications/server/package.json",
+        "main": "notifications/server/src/index.ts",
+        "assets": ["notifications/server/*.md"]
+      }
+    }
+  }
+}
