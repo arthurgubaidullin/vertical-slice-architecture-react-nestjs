@@ -18,6 +18,8 @@ export const NewOrderForm = observer(() => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
+
+        form$.send();
       }}
     >
       <div className="grid grid-cols-1 gap-4">
