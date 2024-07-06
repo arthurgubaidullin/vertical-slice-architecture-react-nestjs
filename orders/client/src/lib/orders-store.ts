@@ -11,7 +11,7 @@ import { readonlyArray } from 'io-ts';
 
 const getOrders = () =>
   pipe(
-    TE.tryCatch(() => fetch(':3000/orders'), E.toError),
+    TE.tryCatch(() => fetch('/api/orders', { credentials: 'omit' }), E.toError),
     TE.chainW((response) => TE.tryCatch(() => response.json(), E.toError)),
     TE.chainEitherKW((data) =>
       pipe(
