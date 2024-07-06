@@ -1,6 +1,6 @@
 import * as SalesClient from '@org/sales-client';
 import { observer } from 'mobx-react-lite';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
 export const NewOrderForm = observer(() => {
@@ -12,7 +12,7 @@ export const NewOrderForm = observer(() => {
     throw new TypeError();
   }
 
-  const [form$] = useState(() => salesClient.newOrderForm.create(id));
+  const form$ = salesClient.newOrderForm.useStore(id);
 
   return (
     <form
