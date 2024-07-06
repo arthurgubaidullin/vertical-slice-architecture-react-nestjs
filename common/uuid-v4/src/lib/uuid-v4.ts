@@ -1,3 +1,8 @@
-export function uuidV4(): string {
-  return 'uuid-v4';
-}
+export const randomUUID = () => {
+  const crypto =
+    typeof global.window?.crypto?.randomUUID === 'function'
+      ? window.crypto
+      : require('crypto');
+
+  return crypto.randomUUID();
+};

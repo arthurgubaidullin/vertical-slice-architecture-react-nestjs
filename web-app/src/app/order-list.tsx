@@ -1,4 +1,5 @@
 import { UUIDPreview } from './uuid-preview';
+import * as UUID from '@org/uuid-v4';
 
 type Order = Readonly<{
   id: string;
@@ -9,19 +10,19 @@ type Order = Readonly<{
 
 const orders: ReadonlyArray<Order> = [
   {
-    id: crypto.randomUUID(),
+    id: UUID.randomUUID(),
     goods: 'Awesomeness',
     quantity: 1,
     total: 1.05,
   },
   {
-    id: crypto.randomUUID(),
+    id: UUID.randomUUID(),
     goods: 'Awesomeness',
     quantity: 10,
     total: 100,
   },
   {
-    id: crypto.randomUUID(),
+    id: UUID.randomUUID(),
     goods: 'Awesomeness',
     quantity: 3,
     total: 146,

@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { NewOrderForm } from './new-order-form';
 import { OrderList } from './order-list';
 import { NotificationList } from './notification-list';
+import * as UUID from '@org/uuid-v4';
 
 export function App() {
   return (
@@ -13,7 +14,7 @@ export function App() {
               <h2 className="menu-title">Sales</h2>
               <ul>
                 <li>
-                  <a href={`/new_order_form/${crypto.randomUUID()}`}>
+                  <a href={`/new_order_form/${UUID.randomUUID()}`}>
                     New Order Form
                   </a>
                 </li>
@@ -24,9 +25,7 @@ export function App() {
               <ul>
                 <li>
                   <a
-                    href={`orders?key=${decodeURIComponent(
-                      crypto.randomUUID()
-                    )}`}
+                    href={`orders?key=${decodeURIComponent(UUID.randomUUID())}`}
                   >
                     List
                   </a>
@@ -39,7 +38,7 @@ export function App() {
                 <li>
                   <a
                     href={`notifications?key=${decodeURIComponent(
-                      crypto.randomUUID()
+                      UUID.randomUUID()
                     )}`}
                   >
                     List

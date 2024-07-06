@@ -1,4 +1,5 @@
 import { UUIDPreview } from './uuid-preview';
+import * as UUID from '@org/uuid-v4';
 
 type Order = Readonly<{
   id: string;
@@ -12,16 +13,16 @@ type Notification = Readonly<{
 
 const notifications: ReadonlyArray<Notification> = [
   {
-    id: crypto.randomUUID(),
+    id: UUID.randomUUID(),
     order: {
-      id: crypto.randomUUID(),
+      id: UUID.randomUUID(),
     },
     type: 'order.accepted',
   },
   {
-    id: crypto.randomUUID(),
+    id: UUID.randomUUID(),
     order: {
-      id: crypto.randomUUID(),
+      id: UUID.randomUUID(),
     },
     type: 'order.rejected',
   },
