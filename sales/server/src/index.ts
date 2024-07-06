@@ -1,3 +1,3 @@
-export * from './lib/sales-server.controller';
-export * from './lib/sales-server.service';
-export * from './lib/sales-server.module';
+export * from './lib/sales.controller';
+export * from './lib/sales.service';
+export * from './lib/sales.module';
