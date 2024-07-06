@@ -1,3 +1,6 @@
-export function newOrderForm(): string {
-  return 'new-order-form';
-}
+export type NewOrderForm = Readonly<{
+  id: string;
+  goods: string;
+  quantity: number;
+  total: number;
+}>;
