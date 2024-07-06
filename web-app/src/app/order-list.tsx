@@ -1,3 +1,5 @@
+import { UUIDPreview } from './uuid-preview';
+
 type Order = Readonly<{
   id: string;
   goods: string;
@@ -26,10 +28,6 @@ const orders: ReadonlyArray<Order> = [
   },
 ];
 
-function createUUIDPreview(uuid: string) {
-  return `${uuid.slice(0, 4)}...${uuid.slice(-4)}`;
-}
-
 export function OrderList() {
   return (
     <div className="grid grid-cols-1 gap-4">
@@ -50,7 +48,9 @@ export function OrderList() {
           <tbody>
             {orders.map((order, index) => (
               <tr key={order.id} className={index % 2 ? 'hover' : ''}>
-                <th>{createUUIDPreview(order.id)}</th>
+                <th>
+                  <UUIDPreview uuid={order.id} />
+                </th>
                 <td>{order.goods}</td>
                 <td>{order.quantity}</td>
                 <td>{order.total}</td>
