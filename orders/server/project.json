@@ -1,5 +1,5 @@
 {
-  "name": "orders-server",
+  "name": "orders-nest-module",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "orders/server/src",
   "projectType": "library",

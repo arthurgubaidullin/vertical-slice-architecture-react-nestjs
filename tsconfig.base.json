@@ -21,7 +21,7 @@
       "@org/order-accepted": ["contracts/order-accepted/src/index.ts"],
       "@org/order-rejected": ["contracts/order-rejected/src/index.ts"],
       "@org/orders-client": ["orders/client/src/index.ts"],
-      "@org/orders-server": ["orders/server/src/index.ts"],
+      "@org/orders-nest-module": ["orders/server/src/index.ts"],
       "@org/sales-client": ["sales/client/src/index.ts"],
       "@org/sales-nest-module": ["sales/server/src/index.ts"],
       "@org/uuid-v4": ["common/uuid-v4/src/index.ts"]

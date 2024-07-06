@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'orders-server',
+  displayName: 'orders-nest-module',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
