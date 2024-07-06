@@ -1,8 +1,7 @@
+import { UUIDPreview } from './uuid-preview';
+
 type Order = Readonly<{
   id: string;
-  goods: string;
-  quantity: number;
-  total: number;
 }>;
 
 type Notification = Readonly<{
@@ -16,9 +15,6 @@ const notifications: ReadonlyArray<Notification> = [
     id: crypto.randomUUID(),
     order: {
       id: crypto.randomUUID(),
-      goods: 'Awesomeness',
-      quantity: 1,
-      total: 1.05,
     },
     type: 'order.accepted',
   },
@@ -26,17 +22,10 @@ const notifications: ReadonlyArray<Notification> = [
     id: crypto.randomUUID(),
     order: {
       id: crypto.randomUUID(),
-      goods: 'Awesomeness',
-      quantity: 10,
-      total: 100,
     },
     type: 'order.rejected',
   },
 ];
-
-function createUUIDPreview(uuid: string) {
-  return `${uuid.slice(0, 4)}...${uuid.slice(-4)}`;
-}
 
 export function NotificationList() {
   return (
@@ -56,8 +45,12 @@ export function NotificationList() {
           <tbody>
             {notifications.map((notification, index) => (
               <tr key={notification.id} className={index % 2 ? 'hover' : ''}>
-                <th>{createUUIDPreview(notification.id)}</th>
-                <td>{createUUIDPreview(notification.order.id)}</td>
+                <th>
+                  <UUIDPreview uuid={notification.id} />
+                </th>
+                <td>
+                  <UUIDPreview uuid={notification.order.id} />
+                </td>
                 <td>
                   {notification.type === 'order.accepted'
                     ? 'accepted'
