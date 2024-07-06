@@ -27,6 +27,8 @@ function NewOrderForm() {
           <input
             type="number"
             placeholder="9999"
+            min={1}
+            step={1}
             className="input input-bordered w-full"
             required
           />
