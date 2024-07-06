@@ -10,10 +10,12 @@
   },
   "private": true,
   "devDependencies": {
+    "@nestjs/schematics": "^10.0.1",
     "@nx/eslint": "19.4.1",
     "@nx/eslint-plugin": "19.4.1",
     "@nx/jest": "19.4.1",
     "@nx/js": "^19.4.1",
+    "@nx/nest": "^19.4.1",
     "@nx/react": "^19.4.1",
     "@nx/vite": "19.4.1",
     "@nx/web": "19.4.1",
