@@ -28,7 +28,6 @@ export const OrderList = observer(() => {
                 <th>Goods</th>
                 <th>Quantity</th>
                 <th>Total price</th>
-                <th>Action</th>
               </tr>
             </thead>
 
@@ -41,9 +40,6 @@ export const OrderList = observer(() => {
                   <td>{order.goods}</td>
                   <td>{order.quantity}</td>
                   <td>{order.total}</td>
-                  <td>
-                    <button className="btn btn-xs">Accept</button>
-                  </td>
                 </tr>
               ))}
             </tbody>
