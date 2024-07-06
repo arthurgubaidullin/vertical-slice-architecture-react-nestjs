@@ -3,7 +3,7 @@ import * as NewOrderForm from '@org/new-order-form';
 import { constVoid, pipe } from 'fp-ts/function';
 import * as O from 'fp-ts/Option';
 
-export const createNewOrderForm = (id: string) => {
+export const create = (id: string) => {
   const store = observable.box<NewOrderForm.NewOrderForm>(
     NewOrderForm.initial(id),
     { deep: false }
