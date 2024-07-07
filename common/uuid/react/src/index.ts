@@ -1,1 +1,1 @@
-export * from './lib/uuid-react';
+export * from './lib/uuid-preview';
