@@ -11,7 +11,7 @@ import { OrdersRepository } from './orders.repository';
 @Injectable()
 export class OrdersService {
   constructor(
-    private eventEmitter: EventEmitter2,
+    private readonly eventEmitter: EventEmitter2,
     private readonly repository: OrdersRepository
   ) {}
 

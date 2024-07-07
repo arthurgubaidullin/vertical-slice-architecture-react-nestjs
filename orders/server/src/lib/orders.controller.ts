@@ -1,9 +1,9 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Inject, Post } from '@nestjs/common';
 import { OrdersService } from './orders.service';
 
 @Controller('orders')
 export class OrdersController {
-  constructor(private ordersService: OrdersService) {}
+  constructor(private readonly ordersService: OrdersService) {}
 
   @Post()
   add(@Body() form: unknown) {
