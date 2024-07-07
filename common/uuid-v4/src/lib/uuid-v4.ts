@@ -1,4 +1,4 @@
-export const randomUUID = () => {
+export const randomUUID = (): string => {
   const crypto =
     typeof window !== 'undefined' &&
     typeof window.crypto?.randomUUID === 'function'
