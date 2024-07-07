@@ -1,5 +1,5 @@
 {
-  "name": "new-order-form",
+  "name": "new-order-form-contract",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "contracts/new-order-form/src",
   "projectType": "library",

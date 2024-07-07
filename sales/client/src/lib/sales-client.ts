@@ -1,4 +1,4 @@
-import { NewOrderForm } from '@org/new-order-form';
+import { NewOrderForm } from '@org/new-order-form-contract';
 import { constVoid } from 'fp-ts/function';
 import { createContext, useState } from 'react';
 import * as NewOrderFormStore from './new-order-form';

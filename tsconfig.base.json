@@ -20,7 +20,7 @@
         "notifications/contracts/extracted-notification/src/index.ts"
       ],
       "@org/extracted-order": ["orders/contracts/extracted-order/src/index.ts"],
-      "@org/new-order-form": ["contracts/new-order-form/src/index.ts"],
+      "@org/new-order-form-contract": ["contracts/new-order-form/src/index.ts"],
       "@org/notifications-client-api": [
         "notifications/client/api/src/index.ts"
       ],

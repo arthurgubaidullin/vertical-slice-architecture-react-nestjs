@@ -1,5 +1,5 @@
 import { ExtractedOrder } from '@org/extracted-order';
-import { NewOrderForm } from '@org/new-order-form';
+import { NewOrderForm } from '@org/new-order-form-contract';
 import * as E from 'fp-ts/Either';
 import { pipe } from 'fp-ts/function';
 import * as TE from 'fp-ts/TaskEither';

@@ -1,4 +1,4 @@
-import * as NewOrderForm from '@org/new-order-form';
+import * as NewOrderForm from '@org/new-order-form-contract';
 import * as Order from '@org/order';
 import { PersistedOrder } from '@org/persisted-order';
 import * as E from 'fp-ts/Either';

@@ -1,6 +1,6 @@
 import * as RD from '@devexperts/remote-data-ts';
 import { ExtractedOrder } from '@org/extracted-order';
-import { NewOrderForm } from '@org/new-order-form';
+import { NewOrderForm } from '@org/new-order-form-contract';
 import { pipe } from 'fp-ts/function';
 import * as TE from 'fp-ts/TaskEither';
 import { action, observable, onBecomeObserved } from 'mobx';

@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'new-order-form',
+  displayName: 'new-order-form-contract',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
