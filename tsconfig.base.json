@@ -39,6 +39,7 @@
       "@org/persisted-order": ["orders/contracts/persisted-order/src/index.ts"],
       "@org/sales-client": ["sales/client/src/index.ts"],
       "@org/sales-nest-module": ["sales/server/src/index.ts"],
+      "@org/uuid-react": ["common/uuid/react/src/index.ts"],
       "@org/uuid-v4": ["common/uuid/v4/value-object/src/index.ts"]
     }
   },
