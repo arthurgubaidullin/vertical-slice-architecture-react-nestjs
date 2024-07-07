@@ -14,7 +14,11 @@
             "depConstraints": [
               {
                 "sourceTag": "tier:app",
-                "onlyDependOnLibsWithTags": ["tier:app", "tier:api"]
+                "onlyDependOnLibsWithTags": ["tier:app", "tier:public-api"]
+              },
+              {
+                "sourceTag": "tier:public-api",
+                "onlyDependOnLibsWithTags": ["tier:api", "tier:use-case"]
               },
               {
                 "sourceTag": "tier:api",
