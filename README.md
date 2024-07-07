@@ -2,6 +2,10 @@
 
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/arthurgubaidullin/vertical-slice-architecture-react-nestjs)
 
+## Disclaimer
+
+This project was done in a limited amount of free time, so some aspects of the development were omitted.
+
 ## What does the project do?
 
 The application allows the user to fill out an order form and then submit it for processing in the order processing slice. The order processing slice notifies the notification processing slice. And that is it.
