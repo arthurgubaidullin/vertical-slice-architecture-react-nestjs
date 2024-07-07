@@ -24,6 +24,9 @@
       "@org/notifications-client-api": [
         "notifications/client/api/src/index.ts"
       ],
+      "@org/notifications-client-react": [
+        "notifications/client/react/src/index.ts"
+      ],
       "@org/notifications-nest-module": ["notifications/server/src/index.ts"],
       "@org/order": ["orders/order/src/index.ts"],
       "@org/order-accepted": ["contracts/order-accepted/src/index.ts"],
