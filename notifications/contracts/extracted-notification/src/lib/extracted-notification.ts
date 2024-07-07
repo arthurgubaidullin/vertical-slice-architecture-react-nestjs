@@ -19,3 +19,5 @@ export interface ExtractedNotification
   extends t.TypeOf<typeof ExtractedNotification> {}
 
 export const ExtractedNotification = OrderCreated;
+
+export const ExtractedNotificationList = t.readonlyArray(ExtractedNotification);
