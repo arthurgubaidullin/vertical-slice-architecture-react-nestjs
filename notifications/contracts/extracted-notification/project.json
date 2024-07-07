@@ -1,0 +1,19 @@
+{
+  "name": "extracted-notification",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "notifications/contracts/extracted-notification/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/notifications/contracts/extracted-notification",
+        "main": "notifications/contracts/extracted-notification/src/index.ts",
+        "tsConfig": "notifications/contracts/extracted-notification/tsconfig.lib.json",
+        "assets": []
+      }
+    }
+  }
+}
