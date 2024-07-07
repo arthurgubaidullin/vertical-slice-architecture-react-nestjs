@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "notifications/client/api/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["slice:notifications"],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",

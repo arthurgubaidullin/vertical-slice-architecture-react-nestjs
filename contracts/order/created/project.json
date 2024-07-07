@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "contracts/order/created/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["slice:contracts"],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",

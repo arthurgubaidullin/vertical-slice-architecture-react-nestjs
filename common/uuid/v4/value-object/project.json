@@ -3,7 +3,7 @@
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "common/uuid/v4/value-object/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["slice:common"],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
