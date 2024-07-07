@@ -3,7 +3,7 @@ import * as NotificationsClient from '@org/notifications-client-react';
 import { pipe } from 'fp-ts/function';
 import { observer } from 'mobx-react-lite';
 import { useContext } from 'react';
-import { UUIDPreview } from './uuid-preview';
+import { UUIDPreview } from '../common/uuid-preview';
 
 export const NotificationList = observer(() => {
   const notifications$ = useContext(NotificationsClient.Context);

@@ -1,9 +1,9 @@
 import * as UUID from '@org/uuid-v4';
 import { useEffect, useState } from 'react';
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
-import { NewOrderForm } from './new-order-form';
-import { NotificationList } from './notification-list';
-import { OrderList } from './order-list';
+import { NewOrderForm } from '../sales/new-order-form';
+import { NotificationList } from '../notifications/notification-list';
+import { OrderList } from '../orders/order-list';
 
 const RedirectToNewOrderForm = () => {
   const navigate = useNavigate();

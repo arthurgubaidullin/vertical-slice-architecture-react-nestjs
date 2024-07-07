@@ -2,7 +2,7 @@ import * as RD from '@devexperts/remote-data-ts';
 import * as OrdersClient from '@org/orders-client-react';
 import { pipe } from 'fp-ts/function';
 import { useContext } from 'react';
-import { UUIDPreview } from './uuid-preview';
+import { UUIDPreview } from '../common/uuid-preview';
 import { observer } from 'mobx-react-lite';
 
 export const OrderList = observer(() => {
