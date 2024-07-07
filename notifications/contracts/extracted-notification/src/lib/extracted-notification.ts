@@ -9,6 +9,7 @@ const Order = t.readonly(
 
 export const OrderCreated = t.readonly(
   t.strict({
+    id: t.string,
     type: t.literal('order.created'),
     order: Order,
   })
