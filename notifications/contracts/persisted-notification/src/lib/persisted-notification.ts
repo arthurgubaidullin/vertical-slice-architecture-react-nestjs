@@ -3,7 +3,6 @@ import * as t from 'io-ts';
 const Order = t.readonly(
   t.strict({
     id: t.string,
-    goods: t.string,
     total: t.number,
   })
 );
