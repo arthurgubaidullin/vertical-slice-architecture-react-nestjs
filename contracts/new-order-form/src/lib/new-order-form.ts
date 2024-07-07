@@ -1,9 +1,11 @@
+import * as E from 'fp-ts/Either';
 import { Eq as _Eq, struct } from 'fp-ts/Eq';
 import { pipe } from 'fp-ts/function';
-import { fromPredicate, Option } from 'fp-ts/Option';
 import * as N from 'fp-ts/number';
+import { fromPredicate, Option } from 'fp-ts/Option';
 import * as S from 'fp-ts/string';
 import * as t from 'io-ts';
+import { failure } from 'io-ts/PathReporter';
 
 export type NewOrderForm = t.TypeOf<typeof NewOrderForm>;
 
@@ -42,3 +44,8 @@ export const change =
       },
       fromPredicate((changed) => !Eq.equals(form, changed))
     );
+
+export const validate = (
+  newOrderForm: unknown
+): E.Either<string[], NewOrderForm> =>
+  pipe(newOrderForm, NewOrderForm.decode, E.mapLeft(failure));
