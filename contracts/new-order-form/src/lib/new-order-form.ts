@@ -45,7 +45,21 @@ export const change =
       fromPredicate((changed) => !Eq.equals(form, changed))
     );
 
+export class NewOrderFormIsInvalid {
+  readonly _tag = 'InvalidNewOrderForm' as const;
+
+  constructor(
+    public readonly form: unknown,
+    public readonly errors: string[]
+  ) {}
+}
+
 export const validate = (
   newOrderForm: unknown
-): E.Either<string[], NewOrderForm> =>
-  pipe(newOrderForm, NewOrderForm.decode, E.mapLeft(failure));
+): E.Either<NewOrderFormIsInvalid, NewOrderForm> =>
+  pipe(
+    newOrderForm,
+    NewOrderForm.decode,
+    E.mapLeft(failure),
+    E.mapLeft((errors) => new NewOrderFormIsInvalid(newOrderForm, errors))
+  );
