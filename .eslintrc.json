@@ -13,8 +13,53 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "tier:app",
+                "onlyDependOnLibsWithTags": ["tier:app", "tier:api"]
+              },
+              {
+                "sourceTag": "tier:api",
+                "onlyDependOnLibsWithTags": ["tier:api", "tier:use-case"]
+              },
+              {
+                "sourceTag": "tier:use-case",
+                "onlyDependOnLibsWithTags": ["tier:use-case", "tier:domain"]
+              },
+              {
+                "sourceTag": "tier:domain",
+                "onlyDependOnLibsWithTags": ["tier:domain"]
+              },
+              {
+                "sourceTag": "slice:app",
+                "onlyDependOnLibsWithTags": [
+                  "slice:contracts",
+                  "slice:sales",
+                  "slice:orders",
+                  "slice:notifications",
+                  "slice:common"
+                ]
+              },
+              {
+                "sourceTag": "slice:common",
+                "onlyDependOnLibsWithTags": ["slice:common"]
+              },
+              {
+                "sourceTag": "slice:contracts",
+                "onlyDependOnLibsWithTags": []
+              },
+              {
+                "sourceTag": "slice:sales",
+                "onlyDependOnLibsWithTags": ["slice:sales", "slice:contracts"]
+              },
+              {
+                "sourceTag": "slice:orders",
+                "onlyDependOnLibsWithTags": ["slice:orders", "slice:contracts"]
+              },
+              {
+                "sourceTag": "slice:notifications",
+                "onlyDependOnLibsWithTags": [
+                  "slice:notifications",
+                  "slice:contracts"
+                ]
               },
               {
                 "sourceTag": "*",
