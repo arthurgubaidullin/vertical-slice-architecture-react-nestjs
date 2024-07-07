@@ -1,0 +1,19 @@
+{
+  "name": "uuid-v4",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "common/uuid/v4/value-object/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/common/uuid/v4/value-object",
+        "main": "common/uuid/v4/value-object/src/index.ts",
+        "tsConfig": "common/uuid/v4/value-object/tsconfig.lib.json",
+        "assets": []
+      }
+    }
+  }
+}
