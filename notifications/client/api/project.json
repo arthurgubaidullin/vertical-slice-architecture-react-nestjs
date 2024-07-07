@@ -1,0 +1,19 @@
+{
+  "name": "notifications-client-api",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "notifications/client/api/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/notifications/client/api",
+        "main": "notifications/client/api/src/index.ts",
+        "tsConfig": "notifications/client/api/tsconfig.lib.json",
+        "assets": []
+      }
+    }
+  }
+}
