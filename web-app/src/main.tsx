@@ -1,4 +1,4 @@
-import * as SalesClient from '@org/sales-client';
+import * as SalesClient from '@org/sales-client-react';
 import * as OrdersClient from '@org/orders-client-react';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';

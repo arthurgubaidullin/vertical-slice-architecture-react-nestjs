@@ -1,4 +1,4 @@
-import * as SalesClient from '@org/sales-client';
+import * as SalesClient from '@org/sales-client-react';
 import { observer } from 'mobx-react-lite';
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
