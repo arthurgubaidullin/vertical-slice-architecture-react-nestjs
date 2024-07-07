@@ -21,11 +21,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: "npm"
+          cache: 'npm'
 
       - run: npm ci
 
       - uses: nrwl/nx-set-shas@v4
 
       - run: npx nx format:check
-      - run: npx nx affected -t lint test build e2e-ci
+      - run: npx nx affected -t lint
+      - run: npx nx affected -t build
+      - run: npx nx affected -t test --passWithNoTests
+      - run: npx nx affected -t e2e-ci
