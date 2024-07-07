@@ -1,0 +1,19 @@
+{
+  "name": "persisted-notification",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "notifications/contracts/persisted-notification/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/notifications/contracts/persisted-notification",
+        "main": "notifications/contracts/persisted-notification/src/index.ts",
+        "tsConfig": "notifications/contracts/persisted-notification/tsconfig.lib.json",
+        "assets": []
+      }
+    }
+  }
+}

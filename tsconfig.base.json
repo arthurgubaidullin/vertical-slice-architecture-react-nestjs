@@ -27,6 +27,9 @@
       "@org/orders-client-api": ["orders/client/api/src/index.ts"],
       "@org/orders-client-react": ["orders/client/react/src/index.ts"],
       "@org/orders-nest-module": ["orders/server/src/index.ts"],
+      "@org/persisted-notification": [
+        "notifications/contracts/persisted-notification/src/index.ts"
+      ],
       "@org/persisted-order": ["orders/contracts/persisted-order/src/index.ts"],
       "@org/sales-client": ["sales/client/src/index.ts"],
       "@org/sales-nest-module": ["sales/server/src/index.ts"],
