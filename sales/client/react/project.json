@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "sales/client/react/src",
   "projectType": "library",
-  "tags": ["slice:sales", "tier:api"],
+  "tags": ["slice:sales", "tier:api", "tier:public-api"],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",

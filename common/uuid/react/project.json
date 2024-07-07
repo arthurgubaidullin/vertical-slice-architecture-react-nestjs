@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "common/uuid/react/src",
   "projectType": "library",
-  "tags": ["slice:common", "tier:api"],
+  "tags": ["slice:common", "tier:api", "tier:public-api"],
   "// targets": "to see all targets run: nx show project uuid-react --web",
   "targets": {}
 }
