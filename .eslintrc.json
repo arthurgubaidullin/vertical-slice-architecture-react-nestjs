@@ -63,7 +63,7 @@
               },
               {
                 "sourceTag": "*",
-                "bannedExternalImports": ["fp-ts/lib/*"]
+                "bannedExternalImports": ["fp-ts/lib/*", "io-ts/lib/*"]
               }
             ]
           }
