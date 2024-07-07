@@ -11,6 +11,10 @@ export class NotificationsService {
 
   @OnEvent('order.created')
   onOrderCreated(data: OrderCreated.OrderCreated) {
-    console.log(data);
+    this.notificationsRepository.add({
+      type: 'order.created',
+      id: data.id,
+      order: data,
+    });
   }
 }
