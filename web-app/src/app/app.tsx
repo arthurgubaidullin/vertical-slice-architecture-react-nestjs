@@ -8,14 +8,16 @@ import { OrderList } from '../orders/order-list';
 const RedirectToNewOrderForm = () => {
   const navigate = useNavigate();
   useEffect(() => {
-    navigate(`/new_order_form/${UUID.randomUUID()}`);
+    navigate(`/new_order_form/${UUID.randomUUID().toString()}`);
   }, [navigate]);
 
   return null;
 };
 
 export function App() {
-  const [newOrderFormId, setNewOrderFormId] = useState(UUID.randomUUID());
+  const [newOrderFormId, setNewOrderFormId] = useState(
+    UUID.randomUUID().toString()
+  );
 
   return (
     <div className="container mx-auto my-4">
@@ -29,7 +31,7 @@ export function App() {
                   <Link
                     to={`/new_order_form/${newOrderFormId}`}
                     onClick={() => {
-                      setNewOrderFormId(UUID.randomUUID());
+                      setNewOrderFormId(UUID.randomUUID().toString());
                     }}
                   >
                     New Order Form
@@ -42,7 +44,9 @@ export function App() {
               <ul>
                 <li>
                   <Link
-                    to={`orders?key=${decodeURIComponent(UUID.randomUUID())}`}
+                    to={`orders?key=${decodeURIComponent(
+                      UUID.randomUUID().toString()
+                    )}`}
                   >
                     List
                   </Link>
@@ -55,7 +59,7 @@ export function App() {
                 <li>
                   <Link
                     to={`notifications?key=${decodeURIComponent(
-                      UUID.randomUUID()
+                      UUID.randomUUID().toString()
                     )}`}
                   >
                     List
