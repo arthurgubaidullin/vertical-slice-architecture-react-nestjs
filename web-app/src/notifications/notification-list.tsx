@@ -1,9 +1,9 @@
 import * as RD from '@devexperts/remote-data-ts';
 import * as NotificationsClient from '@org/notifications-client-react';
+import { UUIDPreview } from '@org/uuid-react';
 import { pipe } from 'fp-ts/function';
 import { observer } from 'mobx-react-lite';
 import { useContext } from 'react';
-import { UUIDPreview } from '../common/uuid-preview';
 
 export const NotificationList = observer(() => {
   const notifications$ = useContext(NotificationsClient.Context);
