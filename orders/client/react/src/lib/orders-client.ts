@@ -1,4 +1,4 @@
-import { NewOrderForm } from '@org/new-order-form-contract';
+import { NewOrderForm } from '@org/new-order-form';
 import * as OrdersStore from './orders-store';
 import { createContext } from 'react';
 

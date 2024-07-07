@@ -1,4 +1,4 @@
-import { NewOrderForm } from '@org/new-order-form-contract';
+import { NewOrderForm } from '@org/new-order-form';
 import { useState } from 'react';
 import * as NewOrderFormStore from './new-order-form';
 

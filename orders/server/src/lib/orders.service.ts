@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { EventEmitter2 } from '@nestjs/event-emitter';
 import { createOrder } from '@org/create-order';
 import { ExtractedOrder } from '@org/extracted-order';
-import * as OrderCreated from '@org/order-created-contract';
+import * as OrderCreated from '@org/order-created';
 import * as E from 'fp-ts/Either';
 import { constVoid, pipe } from 'fp-ts/function';
 import * as O from 'fp-ts/Option';

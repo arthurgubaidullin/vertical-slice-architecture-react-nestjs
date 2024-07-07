@@ -1,4 +1,4 @@
-import * as NewOrderForm from '@org/new-order-form-contract';
+import * as NewOrderForm from '@org/new-order-form';
 import { constVoid, pipe } from 'fp-ts/function';
 import * as O from 'fp-ts/Option';
 import { action, observable } from 'mobx';

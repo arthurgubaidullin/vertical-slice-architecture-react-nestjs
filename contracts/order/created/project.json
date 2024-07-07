@@ -1,5 +1,5 @@
 {
-  "name": "order-created-contract",
+  "name": "order-created",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "contracts/order/created/src",
   "projectType": "library",

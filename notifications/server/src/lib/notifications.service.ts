@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import * as OrderCreated from '@org/order-created-contract';
+import * as OrderCreated from '@org/order-created';
 import { OnEvent } from '@nestjs/event-emitter';
 import { NotificationsRepository } from './notifications.repository';
 import { ExtractedNotification } from '@org/extracted-notification';

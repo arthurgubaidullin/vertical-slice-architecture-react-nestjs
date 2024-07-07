@@ -9,7 +9,7 @@
     "fp-ts": "^2.16.7",
     "@org/extracted-order": "0.0.1",
     "@org/orders-client-api": "0.0.1",
-    "@org/new-order-form-contract": "0.0.1"
+    "@org/new-order-form": "0.0.1"
   },
   "type": "commonjs",
   "main": "./src/index.js",
