@@ -1,9 +1,18 @@
 import * as UUID from '@org/uuid-v4';
-import { useState } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import { NewOrderForm } from './new-order-form';
 import { NotificationList } from './notification-list';
 import { OrderList } from './order-list';
+
+const RedirectToNewOrderForm = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate(`/new_order_form/${UUID.randomUUID()}`);
+  }, [navigate]);
+
+  return null;
+};
 
 export function App() {
   const [newOrderFormId, setNewOrderFormId] = useState(UUID.randomUUID());
@@ -58,6 +67,7 @@ export function App() {
         </div>
         <div className="p-4 col-span-3">
           <Routes>
+            <Route path="/" element={<RedirectToNewOrderForm />} />
             <Route path="/new_order_form/:id" element={<NewOrderForm />} />
             <Route path="/orders" element={<OrderList />} />
             <Route path="/notifications" element={<NotificationList />} />
