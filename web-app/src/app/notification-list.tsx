@@ -24,7 +24,7 @@ export const NotificationList = observer(() => {
             <td>
               <UUIDPreview uuid={notification.order.id} />
             </td>
-            <td>{notification.type === 'order.created' ? 'created' : ''}</td>
+            <td>{notification.type === 'order.created' ? 'Created' : ''}</td>
           </tr>
         ))
     )
@@ -40,7 +40,7 @@ export const NotificationList = observer(() => {
             <tr>
               <th>ID</th>
               <th>Order ID</th>
-              <th>Total price</th>
+              <th>Event</th>
             </tr>
           </thead>
 
