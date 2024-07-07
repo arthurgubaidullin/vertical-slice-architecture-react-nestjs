@@ -1,34 +1,35 @@
+import * as RD from '@devexperts/remote-data-ts';
+import * as NotificationsClient from '@org/notifications-client-react';
+import { pipe } from 'fp-ts/function';
+import { observer } from 'mobx-react-lite';
+import { useContext } from 'react';
 import { UUIDPreview } from './uuid-preview';
-import * as UUID from '@org/uuid-v4';
 
-type Order = Readonly<{
-  id: string;
-}>;
+export const NotificationList = observer(() => {
+  const notifications$ = useContext(NotificationsClient.Context);
 
-type Notification = Readonly<{
-  id: string;
-  order: Order;
-  type: string;
-}>;
+  const rows = pipe(
+    notifications$.list(),
+    RD.fold3(
+      () => null,
+      (error) => {
+        throw error;
+      },
+      (notifications) =>
+        notifications.map((notification, index) => (
+          <tr key={notification.id} className={index % 2 ? 'hover' : ''}>
+            <th>
+              <UUIDPreview uuid={notification.id} />
+            </th>
+            <td>
+              <UUIDPreview uuid={notification.order.id} />
+            </td>
+            <td>{notification.type === 'order.created' ? 'created' : ''}</td>
+          </tr>
+        ))
+    )
+  );
 
-const notifications: ReadonlyArray<Notification> = [
-  {
-    id: UUID.randomUUID(),
-    order: {
-      id: UUID.randomUUID(),
-    },
-    type: 'order.accepted',
-  },
-  {
-    id: UUID.randomUUID(),
-    order: {
-      id: UUID.randomUUID(),
-    },
-    type: 'order.rejected',
-  },
-];
-
-export function NotificationList() {
   return (
     <div className="grid grid-cols-1 gap-4">
       <h1 className="text-2xl">Notifications</h1>
@@ -43,27 +44,9 @@ export function NotificationList() {
             </tr>
           </thead>
 
-          <tbody>
-            {notifications.map((notification, index) => (
-              <tr key={notification.id} className={index % 2 ? 'hover' : ''}>
-                <th>
-                  <UUIDPreview uuid={notification.id} />
-                </th>
-                <td>
-                  <UUIDPreview uuid={notification.order.id} />
-                </td>
-                <td>
-                  {notification.type === 'order.accepted'
-                    ? 'accepted'
-                    : notification.type === 'order.rejected'
-                    ? 'rejected'
-                    : ''}
-                </td>
-              </tr>
-            ))}
-          </tbody>
+          <tbody>{rows}</tbody>
         </table>
       </div>
     </div>
   );
-}
+});
